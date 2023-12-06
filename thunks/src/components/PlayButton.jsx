@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 
-function PlayButton({ text, to, action }) {
+function PlayButton({ text, action }) {
   return (
     <button className="button" onClick={action}>
       {text} <FontAwesomeIcon className="button_icon" icon={faCirclePlay} />

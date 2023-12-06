@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getActivity } from "../store/activitySlice";
+import { activitySliceActions, getActivity } from "../store/activitySlice";
 import Loader from "./Loader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 function Activity() {
   const dispatch = useDispatch();
@@ -16,14 +18,16 @@ function Activity() {
 
   const loader = useSelector((state) => state.activity.loading);
 
-  console.log(loader)
+
 
   
   return (
+    <div className='modal_container_form'>
+    <FontAwesomeIcon className='modal_container_form_icon' icon={faX} onClick={()=>dispatch(activitySliceActions.toggleCartVisability())}/>
     <div className='activities'>
         <h3>What should I do today?</h3>
         {loader ? <Loader/>: <p>{activity.activity}</p>}
-      
+      </div>
     </div>
   );
 }

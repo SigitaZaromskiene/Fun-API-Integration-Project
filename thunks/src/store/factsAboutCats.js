@@ -3,14 +3,16 @@ import axios from "axios";
 
 const factsAboutCatsSlice = createSlice({
   name: "cats",
-  initialState: { fact: null, loader: false, error: null },
-  reducers: {},
+  initialState: { fact: [], loading: false, error: null, modal : null},
+  reducers: {toggleCartVisability(state) {
+    state.modal = !state.modal;
+  },},
   extraReducers: (builder) => {
     builder.addCase(getCatsFacts.pending, (state) => {
-      state.loader = true;
+      state.loading = true;
     });
     builder.addCase(getCatsFacts.fulfilled, (state, action) => {
-      state.loader = false;
+      state.loading = false;
       state.fact = action.payload;
     });
     builder.addCase(getCatsFacts.rejected, (state, action) => {
@@ -25,7 +27,7 @@ export const getCatsFacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get(
-        "https://catfact.ninja/docs/api-docs.json"
+        "https://catfact.ninja/fact?max_length=140"
       );
       return response.data;
     } catch (error) {

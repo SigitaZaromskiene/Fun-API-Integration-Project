@@ -3,8 +3,10 @@ import axios from "axios";
 
 const activitySlice = createSlice({
   name: "activities",
-  initialState: { activity: [], loading: false },
-  reducers: {},
+  initialState: { activity: [], loading: false, modal: null},
+  reducers: {toggleCartVisability(state) {
+    state.modal = !state.modal;
+  },},
   extraReducers: (builder) => {
     builder
       .addCase(getActivity.pending, (state) => {
