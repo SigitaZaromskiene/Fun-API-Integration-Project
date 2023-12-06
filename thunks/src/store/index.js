@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import namesSlice from "./namesSlice";
+import activitySlice from "./activitySlice"
 
  const store = configureStore({
     reducer:{
 
-        name: namesSlice.reducer
+        activity: activitySlice.reducer
     }
     
 })
