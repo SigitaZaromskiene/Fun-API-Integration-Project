@@ -1,10 +1,10 @@
 import "./UI/App.scss";
-import Activity from "./components/Activity";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="app_container">
-      <Activity />
+      <Home/>
     </div>
   );
 }
