@@ -1,0 +1,37 @@
+.modal_container {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  @include flex(center, center, column, 0px);
+  background-color: rgba(128, 128, 128, 0.5);
+  background: linear-gradient(to bottom right, #00ffff, #00bfff);
+
+  &_form {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+   rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 5px;
+    width: 600px;
+    height: 600px;
+    padding: 80px 50px;
+    @include flex(center, center, column, 50px);
+    position: relative;
+
+    &_icon {
+      position: absolute;
+      border: 2px solid #007bff;
+      border-radius: 50%;
+      padding: 8px;
+      top: 10px;
+      right: 15px;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      cursor: pointer;
+      height: 1.2rem;
+      width: 1.2rem;
+      color: #007bff;
+    }
+  }
+}
