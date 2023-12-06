@@ -1,0 +1,5 @@
+.activities {
+    background-color: purple;
+    @include flex (center, center, column, 50px);
+    
+}

@@ -3,12 +3,8 @@ import Activity from "./components/Activity";
 
 function App() {
   return (
-    <div className="App">
-      
-        <div>
-          <Activity />
-        </div>
-      
+    <div className="app_container">
+      <Activity />
     </div>
   );
 }

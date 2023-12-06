@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
 const activitySlice = createSlice({
-    name:'activity',
+    name:'activities',
     initialState:{activity:[], loading: false},
     reducers:{},
     extraReducers: (builder) => {
@@ -11,7 +11,7 @@ const activitySlice = createSlice({
             })
             .addCase(getActivity.fulfilled, (state, action) => {
                 state.loading = false;
-                state.names = action.payload; // Update names in state with fetched data
+                state.activity = action.payload; // Update names in state with fetched data
             })
             .addCase(getActivity.rejected, (state, action) => {
                 state.loading = false;
@@ -25,7 +25,7 @@ const activitySlice = createSlice({
 
 
 export const getActivity = createAsyncThunk(
-    'activity/getActivity',
+    'activities/getActivity',
     async (_, thunkAPI) => { // Since there's no parameter, using "_" as a placeholder
         try {
             const response = await axios.get('https://www.boredapi.com/api/activity');
