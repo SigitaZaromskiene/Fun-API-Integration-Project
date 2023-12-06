@@ -1,5 +1,7 @@
 .activities {
-    background-color: purple;
-    @include flex (center, center, column, 50px);
-    
+  @include flex(center, center, column, 50px);
+
+  p {
+    text-align: center;
+  }
 }

@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getActivity } from "../store/activitySlice";
+import Loader from "./Loader";
 
 function Activity() {
   const dispatch = useDispatch();
@@ -13,11 +14,16 @@ function Activity() {
 
   const activity = useSelector((state) => state.activity.activity);
 
-  console.log(activity)
+  const loader = useSelector((state) => state.activity.loading);
+
+  console.log(loader)
+
+  
   return (
     <div className='activities'>
         <h3>What should I do today?</h3>
-      <div>{activity.activity}</div>
+        {loader ? <Loader/>: <p>{activity.activity}</p>}
+      
     </div>
   );
 }
