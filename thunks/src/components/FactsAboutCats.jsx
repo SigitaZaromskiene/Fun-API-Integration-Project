@@ -26,7 +26,7 @@ function FactsAboutCats() {
         className="modal_container_form_icon"
         icon={faX}
         onClick={() =>
-          dispatch(factsAboutCatsSliceActions.toggleCartVisability())
+          dispatch(factsAboutCatsSliceActions.toggleModalVisability())
         }
       />
       <div className="activities">

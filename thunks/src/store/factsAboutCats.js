@@ -4,7 +4,7 @@ import axios from "axios";
 const factsAboutCatsSlice = createSlice({
   name: "cats",
   initialState: { fact: [], loading: false, error: null, modal : null},
-  reducers: {toggleCartVisability(state) {
+  reducers: {toggleModalVisability(state) {
     state.modal = !state.modal;
   },},
   extraReducers: (builder) => {

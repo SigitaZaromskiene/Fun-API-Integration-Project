@@ -23,7 +23,7 @@ function Activity() {
   
   return (
     <div className='modal_container_form'>
-    <FontAwesomeIcon className='modal_container_form_icon' icon={faX} onClick={()=>dispatch(activitySliceActions.toggleCartVisability())}/>
+    <FontAwesomeIcon className='modal_container_form_icon' icon={faX} onClick={()=>dispatch(activitySliceActions.toggleModalVisability())}/>
     <div className='activities'>
         <h3>What should I do today?</h3>
         {loader ? <Loader/>: <p>{activity.activity}</p>}
