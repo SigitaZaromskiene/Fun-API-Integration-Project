@@ -1,8 +1,14 @@
 .dogs_container {
+
+    @include flex (center, center, column, 30px);
+
+&_img {
     @include flex (center, center, column, 10px);
     max-width:500px;
-    max-height:450px
+    max-height:350px
+
+
 
   
-
+}
 }

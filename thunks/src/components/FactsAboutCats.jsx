@@ -8,6 +8,7 @@ import {
 import Loader from "./Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import PlayButton from "./PlayButton";
 
 function FactsAboutCats() {
   const dispatch = useDispatch();
@@ -31,7 +32,9 @@ function FactsAboutCats() {
       />
       <div className="activities">
         <h3>Curiouse about cats?</h3>
-        {loader ? <Loader /> : <p>{fact.fact}</p>}
+        {loader ? <Loader /> : <>
+        <p>{fact.fact}</p>
+        <PlayButton text='Try again' action={()=>dispatch(getCatsFacts())}/></>}
       </div>
     </div>
   );
