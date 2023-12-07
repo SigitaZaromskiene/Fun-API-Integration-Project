@@ -8,6 +8,7 @@ const memeSlice = createSlice({
     memeImg: null,
     modal: null,
     errorMessage: false,
+    error: null
   },
   reducers: {
     toggleModalVisability(state) {
@@ -26,10 +27,13 @@ const memeSlice = createSlice({
     });
     builder.addCase(getMeme.fulfilled, (state, action) => {
       state.loading = !state.loading;
+      state.error= null;
       state.memeImg = action.payload;
+
     });
-    builder.addCase(getMeme.rejected, (state) => {
+    builder.addCase(getMeme.rejected, (state, action) => {
       state.loading = false;
+      state.error= action.payload
     });
   },
 });
@@ -39,7 +43,7 @@ export const getMeme = createAsyncThunk("meme/getMeme", async (_, thunkAPI) => {
     const response = await axios.get("https://api.imgflip.com/get_memes");
     return response.data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.data.message);
+    return thunkAPI.rejectWithValue(error.message);
   }
 });
 

@@ -1,6 +1,7 @@
 .home_container {
     @include flex (center, center, column, 40px);
     padding: 20px;
+    margin:  120px 50px;
     &_game {
         background: linear-gradient(to bottom right, #00ffff, #00bfff);
         @include flex ( space-between, center, row, 40px);
@@ -10,3 +11,4 @@
         width: 800px;
     }
 }
+

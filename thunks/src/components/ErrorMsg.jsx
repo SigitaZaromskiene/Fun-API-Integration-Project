@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { memeSliceActions } from "../store/memeSlice";
 
-function ErrorMsg() {
+function ErrorMsg({text}) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function ErrorMsg() {
 
   return (
     <div className="error_container">
-      <p>Please enter your text</p>
+      <p>{text}</p>
     </div>
   );
 }

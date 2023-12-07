@@ -10,6 +10,7 @@ import { dogImagesActions } from "../store/dogsImages";
 import DogsImage from "./DogsImage";
 import { memeSliceActions } from "../store/memeSlice";
 import Meme from "./Meme";
+import Cat from "./Cat";
 
 function Home() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function Home() {
 
   return (
     <>
+      <Cat />
       {activityGameModal && (
         <GameCart>
           <Activity />
@@ -30,14 +32,14 @@ function Home() {
           <FactsAboutCats />
         </GameCart>
       )}
-       {dogImgModal  && (
+      {dogImgModal && (
         <GameCart>
           <DogsImage />
         </GameCart>
       )}
-       {memeModal  && (
+      {memeModal && (
         <GameCart>
-          <Meme/>
+          <Meme />
         </GameCart>
       )}
       <div className="home_container">
@@ -45,14 +47,18 @@ function Home() {
           <h3>What should I do today?</h3>
           <PlayButton
             text="Play"
-            action={() => dispatch(activitySliceActions.toggleModalVisability())}
+            action={() =>
+              dispatch(activitySliceActions.toggleModalVisability())
+            }
           />
         </div>
         <div className="home_container_game">
           <h3>Curious about cats?</h3>
           <PlayButton
             text="Play"
-            action={() => dispatch(factsAboutCatsSliceActions.toggleModalVisability())}
+            action={() =>
+              dispatch(factsAboutCatsSliceActions.toggleModalVisability())
+            }
           />
         </div>
         <div className="home_container_game">

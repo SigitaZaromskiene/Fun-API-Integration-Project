@@ -6,6 +6,7 @@ import Loader from "./Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import PlayButton from "./PlayButton";
+import ErrorMsg from "./ErrorMsg";
 
 function DogsImage() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function DogsImage() {
 
   const dogsImg = useSelector((state) => state.dogs.dogsImg);
   const loader = useSelector((state) => state.dogs.loading);
+  const error = useSelector((state) => state.dogs.error);
 
 
   return (
@@ -38,6 +40,7 @@ function DogsImage() {
           </div>
         )}
       </div>
+      {error && <ErrorMsg text={error}/>}
     </div>
   );
 }
