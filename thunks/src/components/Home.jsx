@@ -8,12 +8,15 @@ import { activitySliceActions } from "../store/activitySlice";
 import { factsAboutCatsSliceActions } from "../store/factsAboutCats";
 import { dogImagesActions } from "../store/dogsImages";
 import DogsImage from "./DogsImage";
+import { memeSliceActions } from "../store/memeSlice";
+import Meme from "./Meme";
 
 function Home() {
   const dispatch = useDispatch();
   const activityGameModal = useSelector((state) => state.activity.modal);
   const catGameModal = useSelector((state) => state.cats.modal);
   const dogImgModal = useSelector((state) => state.dogs.modal);
+  const memeModal = useSelector((state) => state.meme.modal);
 
   return (
     <>
@@ -30,6 +33,11 @@ function Home() {
        {dogImgModal  && (
         <GameCart>
           <DogsImage />
+        </GameCart>
+      )}
+       {memeModal  && (
+        <GameCart>
+          <Meme/>
         </GameCart>
       )}
       <div className="home_container">
@@ -52,6 +60,13 @@ function Home() {
           <PlayButton
             text="Play"
             action={() => dispatch(dogImagesActions.toggleModalVisability())}
+          />
+        </div>
+        <div className="home_container_game">
+          <h3>Random meme generator</h3>
+          <PlayButton
+            text="Play"
+            action={() => dispatch(memeSliceActions.toggleModalVisability())}
           />
         </div>
       </div>
