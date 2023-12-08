@@ -2,7 +2,7 @@ import Loader from "./Loader";
 import { useSelector } from "react-redux";
 import PlayButton from "./PlayButton";
 import { useDispatch } from "react-redux";
-import { getMeme, memeSliceActions } from "../store/memeSlice";
+import { getMeme } from "../store/memeSlice";
 
 function MemeRender({ memeText }) {
   const dispatch = useDispatch();

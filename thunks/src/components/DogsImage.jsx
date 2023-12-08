@@ -12,14 +12,12 @@ function DogsImage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Dispatch the getNames thunk action when the component mounts
     dispatch(getDogsImg());
   }, [dispatch]);
 
   const dogsImg = useSelector((state) => state.dogs.dogsImg);
   const loader = useSelector((state) => state.dogs.loading);
   const error = useSelector((state) => state.dogs.error);
-
 
   return (
     <div className="modal_container_form">
@@ -33,14 +31,20 @@ function DogsImage() {
         {loader ? (
           <Loader />
         ) : (
-
-          <div className='dogs_container'>
-          <img className='dogs_container_img'src={`${dogsImg.message}`} alt="Funny dog" />
-          <PlayButton text='Try again' action={()=>dispatch(getDogsImg())}/>
+          <div className="dogs_container">
+            <img
+              className="dogs_container_img"
+              src={`${dogsImg.message}`}
+              alt="Funny dog"
+            />
+            <PlayButton
+              text="Try again"
+              action={() => dispatch(getDogsImg())}
+            />
           </div>
         )}
       </div>
-      {error && <ErrorMsg text={error}/>}
+      {error && <ErrorMsg text={error} />}
     </div>
   );
 }

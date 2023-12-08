@@ -34,11 +34,19 @@ function FactsAboutCats() {
       />
       <div className="activities">
         <h3>Curiouse about cats?</h3>
-        {loader ? <Loader /> : <>
-        <p>{fact.fact}</p>
-        <PlayButton text='Try again' action={()=>dispatch(getCatsFacts())}/></>}
+        {loader ? (
+          <Loader />
+        ) : (
+          <>
+            <p>{fact.fact}</p>
+            <PlayButton
+              text="Try again"
+              action={() => dispatch(getCatsFacts())}
+            />
+          </>
+        )}
       </div>
-      {error && <ErrorMsg text={error}/>}
+      {error && <ErrorMsg text={error} />}
     </div>
   );
 }

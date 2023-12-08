@@ -25,7 +25,7 @@ function Meme() {
 
   return (
     <div className="modal_container_form">
-      {emptyInputError && <ErrorMsg text='Please enter text'/>}
+      {emptyInputError && <ErrorMsg text="Please enter text" />}
       <FontAwesomeIcon
         className="modal_container_form_icon"
         icon={faX}
@@ -48,7 +48,7 @@ function Meme() {
             ></input>
             <PlayButton text="Get meme" action={memeGenerateHandler} />
           </div>
-          {error && <ErrorMsg text={error}/>}
+          {error && <ErrorMsg text={error} />}
         </>
       )}
     </div>

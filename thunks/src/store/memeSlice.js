@@ -8,7 +8,7 @@ const memeSlice = createSlice({
     memeImg: null,
     modal: null,
     errorMessage: false,
-    error: null
+    error: null,
   },
   reducers: {
     toggleModalVisability(state) {
@@ -27,13 +27,12 @@ const memeSlice = createSlice({
     });
     builder.addCase(getMeme.fulfilled, (state, action) => {
       state.loading = !state.loading;
-      state.error= null;
+      state.error = null;
       state.memeImg = action.payload;
-
     });
     builder.addCase(getMeme.rejected, (state, action) => {
       state.loading = false;
-      state.error= action.payload
+      state.error = action.payload;
     });
   },
 });

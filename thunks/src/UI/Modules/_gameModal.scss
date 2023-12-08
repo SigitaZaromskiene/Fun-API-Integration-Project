@@ -1,9 +1,10 @@
 .modal_container {
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   position: fixed;
   top: 0px;
   right: 0px;
+  z-index: 100;
   @include flex(center, center, column, 0px);
   background-color: rgba(128, 128, 128, 0.5);
   background: linear-gradient(to bottom right, #00ffff, #00bfff);
@@ -11,13 +12,22 @@
   &_form {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-   rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 5px;
     width: 600px;
     height: 600px;
     padding: 80px 50px;
-    @include flex(center, center, column, 50px);
+    @include flex(center, center, column, 70px);
     position: relative;
+
+    @include media(medium2) {
+      width: 500px;
+      text-align: center;
+    }
+
+    @include media(medium) {
+      width: 400px;
+    }
 
     &_icon {
       position: absolute;

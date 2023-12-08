@@ -10,7 +10,7 @@ import { dogImagesActions } from "../store/dogsImages";
 import DogsImage from "./DogsImage";
 import { memeSliceActions } from "../store/memeSlice";
 import Meme from "./Meme";
-import Cat from "./Cat";
+import Greeting from "./Greeting";
 
 function Home() {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <>
-      <Cat />
+      <Greeting />
       {activityGameModal && (
         <GameCart>
           <Activity />

@@ -19,11 +19,11 @@ const activitySlice = createSlice({
     builder.addCase(getActivity.fulfilled, (state, action) => {
       state.loading = false;
       state.activity = action.payload;
-      state.error = null; // Update names in state with fetched data
+      state.error = null;
     });
     builder.addCase(getActivity.rejected, (state, action) => {
       state.loading = false;
-      state.error = action.payload; // Set error in state if request fails
+      state.error = action.payload;
     });
   },
 });

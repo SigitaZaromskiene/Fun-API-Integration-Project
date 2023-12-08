@@ -1,5 +1,8 @@
 .meme_container {
   @include flex(center, center, row, 50px);
+  @include media(medium2) {
+    @include flex(center, center, column, 30px);
+  }
 
   input {
     height: 50px;
@@ -16,6 +19,10 @@
     justify-content: center;
     flex-direction: column;
     gap: 50px;
+
+    @include media(medium2) {
+      width: 400px;
+    }
 
     img {
       max-width: 100%;
