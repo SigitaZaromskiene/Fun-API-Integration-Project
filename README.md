@@ -27,6 +27,4 @@ The project includes an array of exciting features:
 - **Activity Suggestions:** Uses [Activity API](https://www.boredapi.com/api/activity) to suggest daily activities.
 - **Meme of the Day:** Retrieves memes from [Meme API](https://api.imgflip.com/get_memes) for daily humor.
 
-## 🚀 Check this project here: [🎮 Fun API Integration Project](https://sigitazaromskiene.github.io/Fun-API-Integration-Project/) or clone the repository:
-
-   git clone https://github.com/your-username/fun-api-project.git
+## 🚀 Check this project here: [🎮 Fun API Integration Project](https://sigitazaromskiene.github.io/Fun-API-Integration-Project/) or clone the repository: git clone https://github.com/your-username/fun-api-project.git
