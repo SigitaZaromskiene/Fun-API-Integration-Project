@@ -3,7 +3,7 @@ import axios from "axios";
 
 const dogsImagesSlice = createSlice({
   name: "dogs",
-  initialState: { dogsImg: [], loading: false, modal: null },
+  initialState: { dogsImg: [], loading: false, modal: null, error: null },
   reducers: {
     toggleModalVisability(state) {
       state.modal = !state.modal;
@@ -16,9 +16,11 @@ const dogsImagesSlice = createSlice({
     builder.addCase(getDogsImg.fulfilled, (state, action) => {
       state.loading = false;
       state.dogsImg = action.payload;
+      state.error = null;
     });
     builder.addCase(getDogsImg.rejected, (state, action) => {
       state.loading = false;
+      state.error = action.payload;
     });
   },
 });
@@ -33,7 +35,7 @@ export const getDogsImg = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.data.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );

@@ -1,20 +1,18 @@
-function Loader (){
-    return (
-    
-<div className="loader">
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-  <div className="loader_wave"></div>
-</div>
-
-    )
+function Loader() {
+  return (
+    <div className="loader">
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+      <div className="loader_wave"></div>
+    </div>
+  );
 }
 
-export default Loader
+export default Loader;

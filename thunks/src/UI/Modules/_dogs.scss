@@ -1,8 +1,13 @@
 .dogs_container {
-    @include flex (center, center, column, 10px);
-    max-width:500px;
-    max-height:450px
+  @include flex(center, center, column, 50px);
 
-  
+  img {
+    @include flex(center, center, column, 10px);
+    max-width: 500px;
+    max-height: 350px;
 
+    @include media(medium2) {
+      max-width: 350px;
+    }
+  }
 }

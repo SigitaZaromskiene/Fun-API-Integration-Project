@@ -8,15 +8,20 @@ import { activitySliceActions } from "../store/activitySlice";
 import { factsAboutCatsSliceActions } from "../store/factsAboutCats";
 import { dogImagesActions } from "../store/dogsImages";
 import DogsImage from "./DogsImage";
+import { memeSliceActions } from "../store/memeSlice";
+import Meme from "./Meme";
+import Greeting from "./Greeting";
 
 function Home() {
   const dispatch = useDispatch();
   const activityGameModal = useSelector((state) => state.activity.modal);
   const catGameModal = useSelector((state) => state.cats.modal);
   const dogImgModal = useSelector((state) => state.dogs.modal);
+  const memeModal = useSelector((state) => state.meme.modal);
 
   return (
     <>
+      <Greeting />
       {activityGameModal && (
         <GameCart>
           <Activity />
@@ -27,9 +32,14 @@ function Home() {
           <FactsAboutCats />
         </GameCart>
       )}
-       {dogImgModal  && (
+      {dogImgModal && (
         <GameCart>
           <DogsImage />
+        </GameCart>
+      )}
+      {memeModal && (
+        <GameCart>
+          <Meme />
         </GameCart>
       )}
       <div className="home_container">
@@ -37,14 +47,18 @@ function Home() {
           <h3>What should I do today?</h3>
           <PlayButton
             text="Play"
-            action={() => dispatch(activitySliceActions.toggleModalVisability())}
+            action={() =>
+              dispatch(activitySliceActions.toggleModalVisability())
+            }
           />
         </div>
         <div className="home_container_game">
           <h3>Curious about cats?</h3>
           <PlayButton
             text="Play"
-            action={() => dispatch(factsAboutCatsSliceActions.toggleModalVisability())}
+            action={() =>
+              dispatch(factsAboutCatsSliceActions.toggleModalVisability())
+            }
           />
         </div>
         <div className="home_container_game">
@@ -52,6 +66,13 @@ function Home() {
           <PlayButton
             text="Play"
             action={() => dispatch(dogImagesActions.toggleModalVisability())}
+          />
+        </div>
+        <div className="home_container_game">
+          <h3>Random meme generator</h3>
+          <PlayButton
+            text="Play"
+            action={() => dispatch(memeSliceActions.toggleModalVisability())}
           />
         </div>
       </div>

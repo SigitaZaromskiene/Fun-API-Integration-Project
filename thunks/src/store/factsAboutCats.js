@@ -14,6 +14,7 @@ const factsAboutCatsSlice = createSlice({
     builder.addCase(getCatsFacts.fulfilled, (state, action) => {
       state.loading = false;
       state.fact = action.payload;
+      state.error= null;
     });
     builder.addCase(getCatsFacts.rejected, (state, action) => {
       state.loading = false;
@@ -31,7 +32,7 @@ export const getCatsFacts = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
