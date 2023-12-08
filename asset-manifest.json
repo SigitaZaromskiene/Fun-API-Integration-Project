@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Fun-API-Integration-Project/static/css/main.6a634aad.css",
+    "main.js": "/Fun-API-Integration-Project/static/js/main.16d4c4c7.js",
+    "index.html": "/Fun-API-Integration-Project/index.html",
+    "main.6a634aad.css.map": "/Fun-API-Integration-Project/static/css/main.6a634aad.css.map",
+    "main.16d4c4c7.js.map": "/Fun-API-Integration-Project/static/js/main.16d4c4c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a634aad.css",
+    "static/js/main.16d4c4c7.js"
+  ]
+}
