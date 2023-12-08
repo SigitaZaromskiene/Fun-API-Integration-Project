@@ -28,4 +28,5 @@ The project includes an array of exciting features:
 
 ## 🚀 Check this project here:  or clone the repository:
 
+   ``bash 
    git clone https://github.com/your-username/fun-api-project.git
