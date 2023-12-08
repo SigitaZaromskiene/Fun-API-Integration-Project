@@ -21,11 +21,11 @@ The project includes an array of exciting features:
 
 ## 🌐 APIs Used
 
-- **Cat Facts:** Utilizes [Cat Facts API](link-to-cat-facts-api) to fetch random cat facts.
-- **Funny Dog Pictures:** Fetches images from [Funny Dog Pictures API](link-to-dog-pics-api) for entertainment.
-- **Activity Suggestions:** Uses [Activity API](link-to-activity-api) to suggest daily activities.
-- **Meme of the Day:** Retrieves memes from [Meme API](link-to-meme-api) for daily humor.
+- **Cat Facts:** Utilizes [Cat Facts API]("https://catfact.ninja/fact?max_length=140") to fetch random cat facts.
+- **Funny Dog Pictures:** Fetches images from [Funny Dog Pictures API]("https://dog.ceo/api/breeds/image/random") for entertainment.
+- **Activity Suggestions:** Uses [Activity API]("https://www.boredapi.com/api/activity") to suggest daily activities.
+- **Meme of the Day:** Retrieves memes from [Meme API]("https://api.imgflip.com/get_memes") for daily humor.
 
 ## 🚀 Check this project here: ** ** or clone the repository:
 
-   **git clone https://github.com/your-username/fun-api-project.git**
+   git clone https://github.com/your-username/fun-api-project.git
